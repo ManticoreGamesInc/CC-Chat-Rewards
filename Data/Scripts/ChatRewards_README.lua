@@ -1,15 +1,12 @@
-<div align="center">
+--[[
 
-# Chat Rewards
+   _____ _           _     _____                            _
+  / ____| |         | |   |  __ \                          | |
+ | |    | |__   __ _| |_  | |__) |_____      ____ _ _ __ __| |___
+ | |    | '_ \ / _` | __| |  _  // _ \ \ /\ / / _` | '__/ _` / __|
+ | |____| | | | (_| | |_  | | \ \  __/\ V  V / (_| | | | (_| \__ \
+  \_____|_| |_|\__,_|\__| |_|  \_\___| \_/\_/ \__,_|_|  \__,_|___/
 
-[![Build Status](https://github.com/ManticoreGamesInc/CC-Chat-Rewards/workflows/CI/badge.svg)](https://github.com/ManticoreGamesInc/CC-Weapon-Spawner/actions/workflows/ci.yml?query=workflow%3ACI%29)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/ManticoreGamesInc/CC-Chat-Rewards?style=plastic)
-
-![Preview](/Screenshots/Chat_Rewards.png)
-
-</div>
-
-## Overview
 
 Chat Rewards gives players a reward if they type a certain phrase into the chat.
 
@@ -21,7 +18,9 @@ There are conditions available that limit whether a reward can be claimed, such 
 
 The rewards can be an amount of Resources and/or Reward Points.
 
-## Setup
+=====
+Setup
+=====
 
 1) Drag and drop the Chat Rewards template into the Hierarchy.
 2) Select the template root object and open the Properties window.
@@ -29,9 +28,13 @@ The rewards can be an amount of Resources and/or Reward Points.
 4) Press the Play button and press the Enter button to open the Chat window.
 5) Type the phrase and press the Enter button to receive a chat reward.
 
-## How to Use
+==========
+How to Use
+==========
 
-### Custom Properties
+=================
+Custom Properties
+=================
 
 The root object of the template has 14 custom properties.
 
@@ -91,18 +94,22 @@ The name of the resource to be rewarded.
 
 The amount of resource rewarded.
 
-### Broadcasted Events
+==================
+Broadcasted Events
+==================
 
 There are two events being broadcasted from the server script to the client script.
 They both check the component root id, in case there are multiple Chat Rewards.
 These events can be hooked in for visual or audio effects. See the client script for an example.
 
-1) `ChatRewardSuccess`
+1) "ChatRewardSuccess"
 	a) Broadcasted when a player successfully receives a reward.
 	b) Broadcast to all players.
 	c) Passes the player's name who was rewarded.
 
-2) `ChatRewardFailure`
+2) "ChatRewardFailure"
 	a) Broadcasted when a player fails to receive a reward.
 	b) Broadcast to just the player who failed.
 	c) Passes the reason the reward failed.
+
+]]--
