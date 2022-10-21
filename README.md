@@ -18,10 +18,10 @@ This component can be found under the **CoreAcademy** account on Community Conte
 Chat Rewards gives players a reward if they type a certain phrase into the chat.
 
 There are conditions available that limit whether a reward can be claimed, such as:
-	-Only certain hours of the day are rewards available.
-	-Only players that have a wallet with any NFT can be rewarded.
-	-Only players that have a wallet with a NFT from certain collections can be rewarded.
-	-Only players on a certain team can be rewarded.
+- Only certain hours of the day are rewards available.
+- Only players that have a wallet with any NFT can be rewarded.
+- Only players that have a wallet with a NFT from certain collections can be rewarded.
+- Only players on a certain team can be rewarded.
 
 The rewards can be an amount of Resources and/or Reward Points.
 
