@@ -39,55 +39,55 @@ The root object of the template has 14 custom properties.
 
 The phrase the player must type into the chat to receive the reward.
 
--Case Sensitive
+- Case Sensitive
 
 If true, then the phrase and chat message will compare upper and lower case spelling.
 
--Check Teams
+- Check Teams
 
 If true, then only players on certain teams will be rewarded.
 
--Teams
+- Teams
 
 If CheckTeams is true, then this comma-separated list of team numbers will represent the team players that can receive a reward.
 
--Check Tokens
+- Check Tokens
 
 If true, then only players that have a wallet linked containing an NFT will be rewarded.
 
--Contract Addresses
+- Contract Addresses
 
 If CheckTokens is true, then this comma-separated list of contract addresses will check if the player owns a token from one of these collections.
 
--Start Time
+- Start Time
 
 The time the phrase will start being rewarded. Uses UTC time zone and 24 hour notation with a colon (for example: "18:56"). Defaults to "0:0".
 
--Stop Time
+- Stop Time
 
 The time the phrase will stop being rewarded. Uses UTC time zone and 24 hour notation with a colon (for example: "18:56"). Defaults to "24:0".
 
--Cooldown Timer
+- Cooldown Timer
 
 The amount of seconds before the player can be rewarded again. Any number less than 1 will be treated as no cooldown.
 
--Daily Limit
+- Daily Limit
 
 The amount of times a player can claim reward in a day. Any number less than 1 will be treated as no limit.
 
--Reward Points Title
+- Reward Points Title
 
 The title of the Reward Points notification. Note: Reward Points are only usable by Perks members.
 
--Reward Points Amount
+- Reward Points Amount
 
 The amount of the Reward Points rewarded. Note: Reward Points are only usable by Perks members.
 
--Resource Name
+- Resource Name
 
 The name of the resource to be rewarded.
 
--Resource Amount
+- Resource Amount
 
 The amount of resource rewarded.
 
