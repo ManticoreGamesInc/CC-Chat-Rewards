@@ -9,6 +9,10 @@
 
 </div>
 
+## Finding the Component
+
+This component can be found under the **CoreAcademy** account on Community Content.
+
 ## Overview
 
 Chat Rewards gives players a reward if they type a certain phrase into the chat.
