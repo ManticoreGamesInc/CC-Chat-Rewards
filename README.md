@@ -97,12 +97,12 @@ There are two events being broadcasted from the server script to the client scri
 They both check the component root id, in case there are multiple Chat Rewards.
 These events can be hooked in for visual or audio effects. See the client script for an example.
 
-1) `ChatRewardSuccess`
-	a) Broadcasted when a player successfully receives a reward.
-	b) Broadcast to all players.
-	c) Passes the player's name who was rewarded.
+`ChatRewardSuccess`
+- Broadcasted when a player successfully receives a reward.
+- Broadcast to all players.
+- Passes the player's name who was rewarded.
 
-2) `ChatRewardFailure`
-	a) Broadcasted when a player fails to receive a reward.
-	b) Broadcast to just the player who failed.
-	c) Passes the reason the reward failed.
+`ChatRewardFailure`
+- Broadcasted when a player fails to receive a reward.
+- Broadcast to just the player who failed.
+- Passes the reason the reward failed.
