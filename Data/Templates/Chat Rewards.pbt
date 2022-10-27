@@ -36,14 +36,6 @@ Assets {
             String: ""
           }
           Overrides {
-            Name: "cs:CheckTokens"
-            Bool: false
-          }
-          Overrides {
-            Name: "cs:ContractAddresses"
-            String: ""
-          }
-          Overrides {
             Name: "cs:StartTime"
             String: ""
           }
@@ -116,14 +108,6 @@ Assets {
             String: "If true, then the phrase and chat message will  be compared checking the upper and lower case spelling."
           }
           Overrides {
-            Name: "cs:CheckTokens:tooltip"
-            String: "If true, then only players that have a wallet linked containing an NFT will be rewarded."
-          }
-          Overrides {
-            Name: "cs:ContractAddresses:tooltip"
-            String: "If CheckTokens is true, then this comma-seperated list of contract addresses will check if the player owns a token from one of these collections."
-          }
-          Overrides {
             Name: "cs:RewardPointsTitle:category"
             String: "Reward"
           }
@@ -154,14 +138,6 @@ Assets {
           Overrides {
             Name: "cs:DailyLimit:category"
             String: "Timing"
-          }
-          Overrides {
-            Name: "cs:CheckTokens:category"
-            String: "Tokens"
-          }
-          Overrides {
-            Name: "cs:ContractAddresses:category"
-            String: "Tokens"
           }
           Overrides {
             Name: "cs:CheckTeams:tooltip"

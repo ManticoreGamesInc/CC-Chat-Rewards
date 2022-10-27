@@ -17,21 +17,18 @@ This component can be found under the **CoreAcademy** account on Community Conte
 
 Chat Rewards gives players a reward if they type a certain phrase into the chat.
 
-There are conditions available that limit whether a reward can be claimed, such as:
-- Only certain hours of the day are rewards available.
-- Only players that have a wallet with any NFT can be rewarded.
-- Only players that have a wallet with a NFT from certain collections can be rewarded.
-- Only players on a certain team can be rewarded.
+The component can control access to the reward using a daily limit, cooldown timer, only a specific time of day, or if the player is on a certain team.
 
 The rewards can be an amount of Resources and/or Reward Points.
 
 ## Setup
 
-1) Drag and drop the Chat Rewards template into the Hierarchy.
-2) Select the template root object and open the Properties window.
-3) Change the `Phrase` custom property to the desired phrase.
-4) Press the Play button and press the Enter button to open the Chat window.
-5) Type the phrase and press the Enter button to receive a chat reward.
+1) Select the Game Setting object in the Hierarchy. Activate the Enable Player Storage property.
+2) Drag and drop the Chat Rewards template into the Hierarchy.
+3) Select the template root object and open the Properties window.
+4) Change the `Phrase` custom property to the desired phrase.
+5) Press the Play button and press the Enter button to open the Chat window.
+6) Type the phrase and press the Enter button to receive a chat reward.
 
 ## How to Use
 
@@ -54,14 +51,6 @@ If true, then only players on certain teams will be rewarded.
 - Teams
 
 If CheckTeams is true, then this comma-separated list of team numbers will represent the team players that can receive a reward.
-
-- Check Tokens
-
-If true, then only players that have a wallet linked containing an NFT will be rewarded.
-
-- Contract Addresses
-
-If CheckTokens is true, then this comma-separated list of contract addresses will check if the player owns a token from one of these collections.
 
 - Start Time
 

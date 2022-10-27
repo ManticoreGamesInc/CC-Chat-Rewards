@@ -8,9 +8,6 @@ local CASE_SENSITIVE = COMPONENT_ROOT:GetCustomProperty("CaseSensitive")
 local CHECK_TEAMS = COMPONENT_ROOT:GetCustomProperty("CheckTeams")
 local TEAMS = COMPONENT_ROOT:GetCustomProperty("Teams")
 
-local CHECK_TOKENS = COMPONENT_ROOT:GetCustomProperty("CheckTokens")
-local CONTRACT_ADDRESSES = COMPONENT_ROOT:GetCustomProperty("ContractAddresses")
-
 local START_TIME = COMPONENT_ROOT:GetCustomProperty("StartTime")
 local STOP_TIME = COMPONENT_ROOT:GetCustomProperty("StopTime")
 local COOLDOWN_TIMER = COMPONENT_ROOT:GetCustomProperty("CooldownTimer")
@@ -26,9 +23,6 @@ local CHECK_TIME = START_TIME ~= "" or STOP_TIME ~= ""
 local USE_RESOURCES = RESOURCE_AMOUNT > 0 and RESOURCE_NAME ~= ""
 local USE_REWARD_POINTS = REWARD_POINTS_AMOUNT > 0
 local DATA_KEY = COMPONENT_ROOT.id
-
---Variables
-local onlinePlayers = {}
 
 --Warnings
 if USE_REWARD_POINTS and REWARD_POINTS_TITLE == "" then
@@ -47,34 +41,6 @@ local function TrimSplit(str)
 	return result
 end
 
--- Array<BlockchainWallet> LoadWallets(Player)
--- Loads all wallets from a player
-local function LoadWallets(player)
-	local resultingWallets = {}
-
-	local walletCollection, status = Blockchain.GetWalletsForPlayer(player)
-
-	if status == BlockchainWalletResultCode.SUCCESS then
-		while walletCollection do
-			local wallets = walletCollection:GetResults()
-
-			for _, wallet in ipairs(wallets) do
-				table.insert(resultingWallets, wallet)
-			end
-
-			if walletCollection.hasMoreResults then
-				walletCollection = walletCollection:GetMoreResults()
-				
-				Task.Wait() -- Wait a frame. Give the CPU breathing room
-			else
-				walletCollection = nil
-			end
-		end
-	end
-
-	return resultingWallets
-end
-
 -- Bool PlayerOnTeams(Player)
 -- Checks if the player is on a list of teams
 local function PlayerOnTeams(player)
@@ -89,29 +55,6 @@ local function PlayerOnTeams(player)
 	return false
 end
 
--- Bool PlayerHasNFT(Player)
--- Checks if the player owns a NFT (uses list of contract addresses if any)
-local function PlayerHasNFT(player)
-	local contracts = TrimSplit(CONTRACT_ADDRESSES)
-	local wallets = LoadWallets(player)
-	for _, wallet in ipairs(wallets) do
-		if #contracts < 1 then
-			local collection = Blockchain.GetTokensForOwner(wallet.address)
-			local results = collection:GetResults()
-			return #results > 0
-		else
-			for _, contract in ipairs(contracts) do
-				local collection = Blockchain.GetTokensForOwner(wallet.address, {contractAddress = contract})
-				local results = collection:GetResults()
-				if #results > 0 then
-					return true
-				end
-			end
-		end
-	end
-	return false
-end
-
 -- Bool MatchingPhrase(String)
 -- Checks if the a string matches the PHRASE custom property (using all lower case if not case sensitive)
 local function MatchingPhrase(message)
@@ -120,14 +63,6 @@ local function MatchingPhrase(message)
 	else
 		return string.lower(message) == string.lower(PHRASE)
 	end
-end
-
--- Bool MatchingPhrase(String)
--- Checks if the a string matches the PHRASE custom property (using all lower case if not case sensitive)
-local function HasTokens(player)
-	if onlinePlayers[player.id] == nil then return false end
-	
-	return onlinePlayers[player.id].hasNFT
 end
 
 -- Bool OnTime()
@@ -221,11 +156,6 @@ local function OnChatReceived(player, params)
 		Events.BroadcastToPlayer(player, "ChatRewardFail", COMPONENT_ROOT.id, "Player is not on the correct team")
 		return
 	end
-
-	if CHECK_TOKENS and HasTokens(player) == false then
-		Events.BroadcastToPlayer(player, "ChatRewardFail", COMPONENT_ROOT.id, "Player did not have the correct NFTs")
-		return
-	end
 	
 	if CHECK_TIME and OnTime() == false then
 		Events.BroadcastToPlayer(player, "ChatRewardFail", COMPONENT_ROOT.id, "Not in the correct time frame currently")
@@ -262,22 +192,8 @@ local function OnPlayerJoined(player)
 		}
 		Storage.SetPlayerData(player, data)
 	end
-    
-    if CHECK_TOKENS then
-    	onlinePlayers[player.id] = {hasNFT = false}
-    	Task.Spawn(function()
-    		onlinePlayers[player.id].hasNFT = PlayerHasNFT(player)
-    	end)
-    end
-end
-
--- nil OnPlayerLeft(Player)
--- When a player leaves, cleans up data tables
-local function OnPlayerLeft(player)
-	if CHECK_TOKENS then onlinePlayers[player.id] = nil end
 end
 
 --Connect functions to events
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
-Game.playerLeftEvent:Connect(OnPlayerLeft)
 Chat.receiveMessageHook:Connect(OnChatReceived)

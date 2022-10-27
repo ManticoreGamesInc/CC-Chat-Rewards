@@ -71,14 +71,6 @@ Objects {
       String: ""
     }
     Overrides {
-      Name: "cs:CheckTokens"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:ContractAddresses"
-      String: ""
-    }
-    Overrides {
       Name: "cs:StartTime"
       String: ""
     }
@@ -151,14 +143,6 @@ Objects {
       String: "If true, then the phrase and chat message will  be compared checking the upper and lower case spelling."
     }
     Overrides {
-      Name: "cs:CheckTokens:tooltip"
-      String: "If true, then only players that have a wallet linked containing an NFT will be rewarded."
-    }
-    Overrides {
-      Name: "cs:ContractAddresses:tooltip"
-      String: "IF NFTOwner property is true, then it will use this comma-seperated list of contract addresses to check if the player owns a token from these collections."
-    }
-    Overrides {
       Name: "cs:RewardPointsTitle:category"
       String: "Reward"
     }
@@ -189,14 +173,6 @@ Objects {
     Overrides {
       Name: "cs:DailyLimit:category"
       String: "Timing"
-    }
-    Overrides {
-      Name: "cs:CheckTokens:category"
-      String: "Tokens"
-    }
-    Overrides {
-      Name: "cs:ContractAddresses:category"
-      String: "Tokens"
     }
     Overrides {
       Name: "cs:CheckTeams:tooltip"
@@ -544,14 +520,6 @@ Objects {
       String: ""
     }
     Overrides {
-      Name: "cs:CheckTokens"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:ContractAddresses"
-      String: ""
-    }
-    Overrides {
       Name: "cs:StartTime"
       String: "5:30"
     }
@@ -624,14 +592,6 @@ Objects {
       String: "If true, then the phrase and chat message will  be compared checking the upper and lower case spelling."
     }
     Overrides {
-      Name: "cs:CheckTokens:tooltip"
-      String: "If true, then only players that have a wallet linked containing an NFT will be rewarded."
-    }
-    Overrides {
-      Name: "cs:ContractAddresses:tooltip"
-      String: "IF NFTOwner property is true, then it will use this comma-seperated list of contract addresses to check if the player owns a token from these collections."
-    }
-    Overrides {
       Name: "cs:RewardPointsTitle:category"
       String: "Reward"
     }
@@ -664,14 +624,6 @@ Objects {
       String: "Timing"
     }
     Overrides {
-      Name: "cs:CheckTokens:category"
-      String: "Tokens"
-    }
-    Overrides {
-      Name: "cs:ContractAddresses:category"
-      String: "Tokens"
-    }
-    Overrides {
       Name: "cs:CheckTeams:tooltip"
       String: "If true, then only players on certain teams will receive rewards."
     }
@@ -701,14 +653,6 @@ Objects {
     }
     Overrides {
       Name: "cs:Phrase:ml"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:CheckTokens:isrep"
-      Bool: false
-    }
-    Overrides {
-      Name: "cs:CheckTokens:ml"
       Bool: false
     }
     Overrides {
