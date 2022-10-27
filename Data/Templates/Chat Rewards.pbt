@@ -322,7 +322,7 @@ Assets {
     }
   }
   Marketplace {
-    Description: "The Chat Rewards check if a player types a certain phrase and rewards them with a resource or RP. The phrase can be an exclusive reward for people with NFTs and can also be locked to a certain time of the day. There are also options to allow the player a certain amount per day or a cooldown timer for claiming the reward. \r\n\r\nDevlog:\r\n--Updated to include \"SetResourceData\" property in case persistent data is already set up for a resource and not needed. 7/14"
+    Description: "This component is part of the Core Academy Essentials. A collection of useful components to help get started in Core.\r\n\r\nChat Rewards gives players a reward if they type a certain phrase into the chat.\r\n\r\nTo learn more on how to use this component, checkout the README included or the article linked below.\r\n\r\nhttps://learn.coregames.com/chat-rewards/\r\n\r\nFor any issues or bugs, please report them on GitHub.\r\n\r\nhttps://github.com/ManticoreGamesInc/CC-Chat-Rewards/issues\r\n\r\nSee more Core Academy Essential components here.\r\n\r\nhttps://learn.coregames.com/core-academy-essentials"
   }
   SerializationVersion: 119
   DirectlyPublished: true
