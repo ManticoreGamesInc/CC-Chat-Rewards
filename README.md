@@ -21,6 +21,8 @@ The component can control access to the reward using a daily limit, cooldown tim
 
 The rewards can be an amount of Resources and/or Reward Points.
 
+This component works in conjunction with the VIP Team Selection component. See more info here: https://learn.coregames.com/vip-team-selection/
+
 ## Setup
 
 1) Select the Game Setting object in the Hierarchy. Activate the Enable Player Storage property.

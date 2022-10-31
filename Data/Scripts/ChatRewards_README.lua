@@ -15,6 +15,8 @@ only a specific time of day, or if the player is on a certain team.
 
 The rewards can be an amount of Resources and/or Reward Points.
 
+This component works in conjunction with the VIP Team Selection component. See more info here: https://learn.coregames.com/vip-team-selection/
+
 =====
 Setup
 =====
