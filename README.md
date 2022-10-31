@@ -2,7 +2,7 @@
 
 # Chat Rewards
 
-[![Build Status](https://github.com/ManticoreGamesInc/CC-Chat-Rewards/workflows/CI/badge.svg)](https://github.com/ManticoreGamesInc/CC-Weapon-Spawner/actions/workflows/ci.yml?query=workflow%3ACI%29)
+[![Build Status](https://github.com/ManticoreGamesInc/CC-Chat-Rewards/workflows/CI/badge.svg)](https://github.com/ManticoreGamesInc/CC-Chat-Rewards/actions/workflows/ci.yml?query=workflow%3ACI%29)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/ManticoreGamesInc/CC-Chat-Rewards?style=plastic)
 
 ![Preview](/Screenshots/Chat_Rewards.png)
