@@ -152,7 +152,7 @@ end
 local function OnChatReceived(player, params)
 	if MatchingPhrase(params.message) == false then return end
 	
-	if CHECK_TEAMS and PlayerOnTeams(player) then
+	if CHECK_TEAMS and not PlayerOnTeams(player) then
 		Events.BroadcastToPlayer(player, "ChatRewardFail", COMPONENT_ROOT.id, "Player is not on the correct team")
 		return
 	end
